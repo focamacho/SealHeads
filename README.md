@@ -78,6 +78,9 @@ public class ExamplePlugin {
         // If an error occurred or the player doesn't exist, returns Optional.empty().
         ExecutorService service = Executors.newSingleThreadExecutor();
         CompletableFuture<Optional<ItemStack>> notchHead = SealHeads.getHead("Notch", service);
+        
+        // Creates a head ItemStack using the provided Skin texture.
+        ItemStack dinnerboneHead = SealHeads.createHeadFromTexture("e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODc2NDk3YzI4MGY0MGFkNmUxYjQ2YWM1MjFkZmViYTJjYTU1ZThkNGUyOTVjYzQ4NWVhYjQ1NzAwYzc0YmE3OSJ9fX0=");
     }
 
 }

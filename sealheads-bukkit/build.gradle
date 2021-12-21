@@ -1,0 +1,28 @@
+plugins {
+    id 'com.github.johnrengelman.shadow'
+}
+
+repositories {
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'minecraft-repo'
+        url = 'https://libraries.minecraft.net';
+    }
+}
+
+dependencies {
+    api project(':sealheads-common')
+    compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
+    compileOnly 'com.mojang:authlib:1.5.21'
+}
+
+shadowJar {
+    dependencies {
+        include(dependency(':sealheads-common'))
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar

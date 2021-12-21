@@ -1,0 +1,3 @@
+rootProject.name = 'sealheads'
+
+include 'sealheads-common', 'sealheads-bukkit', 'sealheads-sponge'

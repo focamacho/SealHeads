@@ -1,0 +1,18 @@
+plugins {
+    id 'org.spongepowered.plugin' version '0.9.0'
+    id 'com.github.johnrengelman.shadow'
+}
+
+dependencies {
+    compile project(':sealheads-common')
+    compileOnly 'org.spongepowered:spongeapi:7.4.0'
+    annotationProcessor 'org.spongepowered:spongeapi:7.4.0'
+}
+
+shadowJar {
+    dependencies {
+        include(dependency(':sealheads-common'))
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar

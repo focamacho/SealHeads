@@ -67,7 +67,7 @@ public class ExamplePlugin {
 
         // Fetches the UUID and Skin from the Mojang's API, and returns the skin string.
         // If an error occurred or the player doesn't exist, returns Optional.empty().
-        Optional<String> focamachoSkin = SealHeads.getSkin("Focamacho");
+        Optional<String> focamachoSkin = SealHeads.getTexture("Focamacho");
 
         // Fetches the Skin from the Mojang's API using the provided UUID, and returns the head ItemStack.
         // If an error occurred or the player doesn't exist, returns Optional.empty().

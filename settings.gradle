@@ -1,3 +1,6 @@
 rootProject.name = 'sealheads'
 
-include 'sealheads-common', 'sealheads-bukkit', 'sealheads-sponge'
+include 'bukkit', 'sponge', 'sealheads-common'
+
+project(":bukkit").projectDir = file("sealheads-bukkit")
+project(":sponge").projectDir = file("sealheads-sponge")

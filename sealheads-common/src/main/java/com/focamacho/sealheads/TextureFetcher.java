@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -28,9 +29,11 @@ public class TextureFetcher {
                     return Optional.of(property.get("value").getAsString());
                 }
             }
+        } catch(NullPointerException | FileNotFoundException ignored) {
+            // Ignored exceptions - user doesn't exists
         } catch (IOException exception) {
             exception.printStackTrace();
-        } catch(NullPointerException ignored) {}
+        }
 
         return Optional.empty();
     }
@@ -44,9 +47,11 @@ public class TextureFetcher {
             String userId = player.get("id").getAsString();
 
             return getTexture(UUID.fromString(userId.replaceAll("(.{8})(.{4})(.{4})(.{4})(.+)", "$1-$2-$3-$4-$5")));
+        } catch(NullPointerException | FileNotFoundException ignored) {
+            // Ignored exceptions - user doesn't exists
         } catch(IOException exception) {
             exception.printStackTrace();
-        } catch(NullPointerException ignored) {}
+        }
 
         return Optional.empty();
     }

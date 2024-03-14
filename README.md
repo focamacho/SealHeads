@@ -25,7 +25,7 @@ Do not forget to replace *VERSION* with the desired version of the API. Check wh
 ```
 ```xml
 <dependency>
-    <groupId>com.github.seal-island.sealheads</groupId>
+    <groupId>com.github.focamacho.sealheads</groupId>
     <artifactId>bukkit</artifactId> <!-- Replace "bukkit" with "sponge" if desired. -->
     <version>VERSION</version>
 </dependency>
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.seal-island.sealheads:bukkit:VERSION' // Replace "bukkit" with "sponge" if desired.
+    implementation 'com.github.focamacho.sealheads:bukkit:VERSION' // Replace "bukkit" with "sponge" if desired.
 }
 ```
 
